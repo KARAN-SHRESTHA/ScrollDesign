@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,7 +42,18 @@ public class MainActivity extends AppCompatActivity {
                 if(validate())
                 {
 
+                    String Make = etMake.getText().toString();
+                    String Color = etColor.getText().toString();
+                    String Year = etYear.getText().toString();
+                    String Price = etPrice.getText().toString();
+                    String Size = etSize.getText().toString();
 
+                    //storing values in a single string
+                    String main = "This Vehicle is N0." + "Manufacturer " + Make + "Current Value "
+                            + Price + "Year" + Year + "Color " + Color + "Engine Size " + Size;
+
+                    //first getting and concatinating with new value and setting it
+                    tvOut.setText(tvOut.getText() + "\n" + "\n" + main);
 
                 }
 
